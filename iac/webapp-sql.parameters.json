@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "webAppName": {
+        "value": "testdeploy1284"
+      },
+      "sku": {
+        "value": "s1"
+      },
+      "sqlAdministratorLogin": {
+        "value": "Wesley"
+      },
+"sqlAdministratorLoginPassword": {
+  "value": "xSfg23Kld#%1"
+},
+"transparentDataEncryption": {
+  "value": "Enabled"
+}
+    }
+  }
