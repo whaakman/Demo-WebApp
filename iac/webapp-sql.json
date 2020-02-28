@@ -230,7 +230,7 @@
                     ],
                     "properties": {
                         "repoUrl": "[parameters('repoURL')]",
-                        "branch": "[parameters('branch')]",
+                        "branch": "staging",
                         "isManualIntegration": true
                     }
                 }
