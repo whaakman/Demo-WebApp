@@ -9,10 +9,10 @@
         "value": "s1"
       },
       "sqlAdministratorLogin": {
-        "value": "Wesley"
+        "value": "GEN-UNIQUE"
       },
 "sqlAdministratorLoginPassword": {
-  "value": "xSfg23Kld#%1"
+  "value": "GEN-UNIQUE"
 },
 "transparentDataEncryption": {
   "value": "Enabled"
