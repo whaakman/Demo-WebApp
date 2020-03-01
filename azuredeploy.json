@@ -168,7 +168,7 @@
 
       "resources": [
         {
-          "apiVersion": "2015-08-01",
+          "apiVersion": "2018-11-01",
           "name": "appsettings",
           "type": "config",
           "dependsOn": [
@@ -181,18 +181,8 @@
           }
         },
         {
-          "apiVersion": "2015-08-01",
-          "name": "Microsoft.ApplicationInsights.AzureWebSites",
-          "type": "siteextensions",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', variables('webAppPortalName'))]"
-          ],
-          "properties": {
-          }
-        },
-        {
           "type": "sourcecontrols",
-          "apiVersion": "2018-02-01",
+          "apiVersion": "2018-11-01",
           "name": "web",
           "location": "[parameters('location')]",
           "dependsOn": [
@@ -273,8 +263,9 @@
         "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('webAppName'))]": "Resource",
         "displayName": "AppInsightsComponent"
       },
+      "kind": "web",
       "properties": {
-        "applicationId": "[variables('appInsightsName')]"
+        "Application_Type": "web"
       }
     }
   ],
