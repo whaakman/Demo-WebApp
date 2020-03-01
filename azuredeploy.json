@@ -75,7 +75,7 @@
     {
       "name": "[variables('sqlServerName')]",
       "type": "Microsoft.Sql/servers",
-      "apiVersion": "2019-06-01-preview",
+      "apiVersion": "2014-04-01-preview",
       "location": "[parameters('location')]",
       "tags": {
         "displayName": "SqlServer"
@@ -89,7 +89,7 @@
         {
           "name": "[variables('databaseName')]",
           "type": "databases",
-          "apiVersion": "2019-06-01-preview",
+          "apiVersion": "2015-01-01",
           "location": "[parameters('location')]",
           "tags": {
             "displayName": "Database"
@@ -115,6 +115,19 @@
                 "[variables('databaseName')]"
               ]
             }
+          ]
+        },
+        {
+          "name": "AllowAllMicrosoftAzureIps",
+          "type": "firewallrules",
+          "apiVersion": "2014-04-01",
+          "location": "[parameters('location')]",
+          "properties": {
+            "endIpAddress": "0.0.0.0",
+            "startIpAddress": "0.0.0.0"
+          },
+          "dependsOn": [
+            "[variables('sqlServerName')]"
           ]
         }
       ]
@@ -152,9 +165,10 @@
         "[resourceId('microsoft.insights/components/', variables('appInsightsName'))]",
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       ],
+
       "resources": [
         {
-          "apiVersion": "2018-11-01",
+          "apiVersion": "2015-08-01",
           "name": "appsettings",
           "type": "config",
           "dependsOn": [
@@ -168,7 +182,7 @@
         },
         {
           "type": "sourcecontrols",
-          "apiVersion": "2018-11-01",
+          "apiVersion": "2018-02-01",
           "name": "web",
           "location": "[parameters('location')]",
           "dependsOn": [
@@ -181,7 +195,7 @@
           }
         },
         {
-          "apiVersion": "2018-11-01",
+          "apiVersion": "2015-08-01",
           "name": "Staging",
           "type": "slots",
           "tags": {
@@ -225,7 +239,7 @@
           ]
         },
         {
-          "apiVersion": "2018-11-01",
+          "apiVersion": "2015-08-01",
           "name": "connectionstrings",
           "type": "config",
           "dependsOn": [
@@ -241,7 +255,7 @@
       ]
     },
     {
-      "apiVersion": "2015-05-01",
+      "apiVersion": "2014-04-01",
       "name": "[variables('appInsightsName')]",
       "type": "Microsoft.Insights/components",
       "location": "[resourceGroup().location]",
@@ -249,9 +263,8 @@
         "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('webAppName'))]": "Resource",
         "displayName": "AppInsightsComponent"
       },
-      "kind": "web",
       "properties": {
-        "Application_Type": "web"
+        "applicationId": "[variables('appInsightsName')]"
       }
     }
   ],
