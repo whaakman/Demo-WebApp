@@ -75,7 +75,7 @@
     {
       "name": "[variables('sqlServerName')]",
       "type": "Microsoft.Sql/servers",
-      "apiVersion": "2014-04-01-preview",
+      "apiVersion": "2019-06-01-preview",
       "location": "[parameters('location')]",
       "tags": {
         "displayName": "SqlServer"
@@ -89,7 +89,7 @@
         {
           "name": "[variables('databaseName')]",
           "type": "databases",
-          "apiVersion": "2015-01-01",
+          "apiVersion": "2019-06-01-preview",
           "location": "[parameters('location')]",
           "tags": {
             "displayName": "Database"
@@ -120,7 +120,7 @@
         {
           "name": "AllowAllMicrosoftAzureIps",
           "type": "firewallrules",
-          "apiVersion": "2014-04-01",
+          "apiVersion": "2019-06-01-preview",
           "location": "[parameters('location')]",
           "properties": {
             "endIpAddress": "0.0.0.0",
@@ -165,7 +165,6 @@
         "[resourceId('microsoft.insights/components/', variables('appInsightsName'))]",
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       ],
-
       "resources": [
         {
           "apiVersion": "2018-11-01",
@@ -195,7 +194,7 @@
           }
         },
         {
-          "apiVersion": "2015-08-01",
+          "apiVersion": "2018-11-01",
           "name": "Staging",
           "type": "slots",
           "tags": {
@@ -239,7 +238,7 @@
           ]
         },
         {
-          "apiVersion": "2015-08-01",
+          "apiVersion": "2018-11-01",
           "name": "connectionstrings",
           "type": "config",
           "dependsOn": [
