@@ -1,16 +1,17 @@
-name: Greeting from Mona
-on: push
+name: arm-ttk
+
+on: [push]
 
 jobs:
-  my-job:
-    name: My Job
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        echo Add other actions to build,
+        echo test, and deploy your project.
