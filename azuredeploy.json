@@ -78,7 +78,7 @@
       "apiVersion": "2014-04-01-preview",
       "location": "[parameters('location')]",
       "tags": {
-        "displayName": "SqlServer"
+        "environment": "demo"
       },
       "properties": {
         "administratorLogin": "[parameters('sqlAdministratorLogin')]",
@@ -92,7 +92,7 @@
           "apiVersion": "2015-01-01",
           "location": "[parameters('location')]",
           "tags": {
-            "displayName": "Database"
+            "environment": "demo"
           },
           "properties": {
             "edition": "[variables('databaseEdition')]",
@@ -153,19 +153,12 @@
       "name": "[variables('webAppPortalName')]",
       "location": "[parameters('location')]",
       "properties": {
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
-        "metadata": [
-          {
-            "name": "CURRENT_STACK",
-            "value": "dotnetcore"
-          }
-        ]
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       },
       "dependsOn": [
         "[resourceId('microsoft.insights/components/', variables('appInsightsName'))]",
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
       ],
-
       "resources": [
         {
           "apiVersion": "2015-08-01",
@@ -199,7 +192,7 @@
           "name": "Staging",
           "type": "slots",
           "tags": {
-            "displayName": "Staging Slot"
+            "environment": "demo"
           },
           "location": "[parameters('location')]",
           "dependsOn": [
@@ -255,13 +248,13 @@
       ]
     },
     {
-      "apiVersion": "2014-04-01",
+      "apiVersion": "2015-05-01",
       "name": "[variables('appInsightsName')]",
       "type": "Microsoft.Insights/components",
       "location": "[resourceGroup().location]",
       "tags": {
         "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('webAppName'))]": "Resource",
-        "displayName": "AppInsightsComponent"
+        "environment": "demo"
       },
       "properties": {
         "applicationId": "[variables('appInsightsName')]"
