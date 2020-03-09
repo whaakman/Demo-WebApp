@@ -11,6 +11,9 @@ jobs:
       - name: run ARM TTK
         uses: ./
         id: action
+      - name: Get the Output
+        run: echo "The time was ${{ steps.action.outputs }}"
+
 
 
         
