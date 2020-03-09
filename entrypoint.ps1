@@ -4,4 +4,4 @@ Test-AzTemplate -TemplatePath /temp/
 $TestResults = Test-AzTemplate -TemplatePath /temp/
 $TestFailures =  $TestResults | Where-Object { -not $_.Passed }
 
-Write-Host $TestFailures
+Write-Output $TestFailures
