@@ -6,4 +6,4 @@ outputs:
   description: 'Test results of the ARM TTK'
 runs:
  using: 'docker'
- image: 'Dockerfile'
+ image: 'Dockerfile1'
