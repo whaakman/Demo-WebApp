@@ -9,4 +9,4 @@ $TestResults = Test-AzTemplate -TemplatePath $TemplatePath
 $TestFailures =  $TestResults | Where-Object { -not $_.Passed }
 Write-host "::set-output name=results::Hello!"
 Write-Output $TestFailures
-exit 0
+exit 1
