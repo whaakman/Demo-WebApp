@@ -1,7 +1,7 @@
 Import-Module '/arm-ttk/arm-ttk/arm-ttk.psd1'
-Test-AzTemplate -TemplatePath /temp/
 
-$TestResults = Test-AzTemplate -TemplatePath /temp/
+$TemplatePath = '/home/runner/work/Demo-WebApp-ISVs/Demo-WebApp-ISVs'
+$TestResults = Test-AzTemplate -TemplatePath $TemplatePath
 $TestFailures =  $TestResults | Where-Object { -not $_.Passed }
 
 Write-Output $TestFailures
