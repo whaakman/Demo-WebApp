@@ -1,9 +1,0 @@
-name: 'ARM TTK'
-description: 'Checks the azuredeploy.json with the ARM Testing Toolkit'
-author: 'Wesley Haakman'
-outputs:
- testresults:
-  description: 'Test results of the ARM TTK'
-runs:
- using: 'docker'
- image: 'Dockerfile'
