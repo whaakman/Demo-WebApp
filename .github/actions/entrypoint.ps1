@@ -7,5 +7,5 @@ $TemplatePath = '/temp/'
 $TestResults = Test-AzTemplate -TemplatePath $TemplatePath
 # We only want to return failures
 $TestFailures =  $TestResults | Where-Object { -not $_.Passed }
-Write-host "::set-output name=testoutput::thisisatest"
+Write-host "::set-output name=results::$TestFailures"
 Write-Output $TestFailures
