@@ -4,8 +4,9 @@ Import-Module '/arm-ttk/arm-ttk/arm-ttk.psd1'
 # Path we cloned the repository into
 $TemplatePath = '/temp/'
 
-$TestResults = Test-AzTemplate -TemplatePath $TemplatePath -NoPester
+$TestResults = Test-AzTemplate -TemplatePath $TemplatePath
 # We only want to return failures
 $TestFailures =  $TestResults | Where-Object { -not $_.Passed }
 Write-host "::set-output name=results::Hello!"
 Write-Output $TestFailures
+exit 0
