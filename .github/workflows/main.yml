@@ -4,7 +4,7 @@ on:
     - master
 
 jobs:
-  Test:
+  test_arm_templates:
     runs-on: ubuntu-latest
     name: Run ARM TTK
     steps:
