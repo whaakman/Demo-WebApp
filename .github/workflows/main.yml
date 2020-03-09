@@ -9,6 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: run ARM TTK
-        uses: .actions/action@7be9243
+        uses: ./actions
+        id: action
+
 
         
