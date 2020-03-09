@@ -14,8 +14,6 @@ jobs:
       - name: run ARM TTK
         uses: ./.github/actions
         id: action
-      - name: Results
-        run: echo "The time was ${{ steps.action.outputs }}"
 
 
 
