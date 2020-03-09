@@ -1,16 +1,9 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+name: 'ARM TTK'
+description: 'Checks the azuredeploy.json with the ARM Testing Toolkit'
+author: 'Wesley Haakman'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+ testresults:
+  description: 'Test results of the ARM TTK'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+ using: 'docker'
+ image: 'Dockerfile'
