@@ -14,7 +14,6 @@ RUN apt-get update && \
 # Clone ARM-TTK Repo
 RUN git clone https://github.com/Azure/arm-ttk.git
 
-COPY /azuredeploy.json /temp/
 COPY entrypoint.ps1 /entrypoint.ps1
 
 ENTRYPOINT [ "pwsh", "/entrypoint.ps1" ]
