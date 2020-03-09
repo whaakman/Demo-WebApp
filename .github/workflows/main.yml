@@ -14,6 +14,8 @@ jobs:
       - name: run ARM TTK
         uses: ./.github/actions
         id: action
+      - name: Print output
+        run: echo ${{ steps.action.outputs.testoutput}}
 
 
 
