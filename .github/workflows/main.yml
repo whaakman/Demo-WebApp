@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: run ARM TTK
-        uses: ./actions
+        uses: ./.github/actions/
         id: action
 
 
