@@ -175,7 +175,7 @@
         },
         {
           "type": "sourcecontrols",
-          "apiVersion": "2018-02-01",
+          "apiVersion": "2015-08-01",
           "name": "web",
           "location": "[parameters('location')]",
           "dependsOn": [
@@ -217,7 +217,7 @@
             },
             {
               "type": "sourcecontrols",
-              "apiVersion": "2018-02-01",
+              "apiVersion": "2015-08-01",
               "name": "web",
               "location": "[parameters('location')]",
               "dependsOn": [
