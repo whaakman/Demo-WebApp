@@ -10,4 +10,4 @@ Deploys an ARM Template with the following resources:
 
 Can be used to demo App Insights, swapping slots and the effect of Deployment slot settings
 
-[![Deploy to Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fwhaakman%2FDemo-WebApp%2Fmaster%2Fazuredeploy.json)
